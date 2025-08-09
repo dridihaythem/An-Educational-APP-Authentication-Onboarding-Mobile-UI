@@ -5,8 +5,8 @@ import 'package:design/widgets/app_form_field.dart';
 import 'package:design/widgets/login_register_switcher.dart';
 import 'package:flutter/material.dart';
 
-class RegisterScreen extends StatelessWidget {
-  const RegisterScreen({super.key});
+class LoginScreen extends StatelessWidget {
+  const LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,31 +25,39 @@ class RegisterScreen extends StatelessWidget {
                 ),
                 SizedBox(height: 15),
                 Text(
-                  'Create An Account',
+                  'Welcome Back',
                   style: TextStyle(
                     color: Constant.mainColor,
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(height: 30),
+                SizedBox(height: 12),
+                Text(
+                  'Login to continue',
+                  style: TextStyle(color: Constant.mainColor, fontSize: 18),
+                ),
+                SizedBox(height: 50),
                 Column(
-                  spacing: 20,
+                  crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
-                    AppFormField(label: 'Name'),
                     AppFormField(
                       label: 'Email Address',
                       prefixIcon: Icons.email_outlined,
                     ),
+                    SizedBox(height: 25),
                     AppFormField(
                       label: 'Password',
                       suffixIcon: Icons.remove_red_eye_outlined,
                       obscureText: true,
                     ),
-                    AppFormField(
-                      label: 'Confirm Password',
-                      suffixIcon: Icons.remove_red_eye_outlined,
-                      obscureText: true,
+                    SizedBox(height: 15),
+                    Text(
+                      'Forgot Password ?',
+                      style: TextStyle(
+                        color: Constant.mainColor,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ],
                 ),
@@ -64,7 +72,7 @@ class RegisterScreen extends StatelessWidget {
                     );
                   },
                   child: Text(
-                    "SIGN UP",
+                    "LOG IN",
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 16,
@@ -74,13 +82,10 @@ class RegisterScreen extends StatelessWidget {
                 ),
                 SizedBox(height: 30),
                 LoginRegisterSwitcher(
-                  mainText: 'Already have an account? ',
-                  switchText: 'Log in',
+                  mainText: 'Don\'t have an account ? ',
+                  switchText: 'Sign Up',
                   onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => LoginScreen()),
-                    );
+                    Navigator.pop(context);
                   },
                 ),
               ],
