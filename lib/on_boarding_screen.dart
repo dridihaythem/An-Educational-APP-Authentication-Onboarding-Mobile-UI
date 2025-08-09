@@ -1,3 +1,4 @@
+import 'package:design/constant.dart';
 import 'package:design/register_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -27,7 +28,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
             itemBuilder: (context, index) => CircleAvatar(
               radius: 7,
               backgroundColor: index == _currentPage
-                  ? Color(0xFF491B6D)
+                  ? Constant.mainColor
                   : Color(0xFDFD9D9D9),
             ),
             separatorBuilder: (context, index) => SizedBox(width: 10),
@@ -38,7 +39,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
         Text(
           title,
           style: TextStyle(
-            color: Color(0xFF491B6D),
+            color: Constant.mainColor,
             fontSize: 35,
             fontWeight: FontWeight.bold,
           ),
@@ -46,7 +47,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
         SizedBox(height: 20),
         Text(
           description,
-          style: TextStyle(color: Color(0xFF491B6D), fontSize: 19),
+          style: TextStyle(color: Constant.mainColor, fontSize: 19),
           textAlign: TextAlign.center,
         ),
       ],
@@ -91,7 +92,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                     },
                     child: Text(
                       'Skip',
-                      style: TextStyle(color: Color(0xFF491B6D), fontSize: 16),
+                      style: TextStyle(color: Constant.mainColor, fontSize: 16),
                     ),
                   ),
                 ),
@@ -138,20 +139,14 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                       child: Text(
                         "Back",
                         style: TextStyle(
-                          color: Color(0xFF491B6D),
+                          color: Constant.mainColor,
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                     ),
                   ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Color(0xFF491B6D),
-                      minimumSize: Size(150, 44),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                    ),
+                    style: ElevatedButton.styleFrom(minimumSize: Size(150, 44)),
                     onPressed: () {
                       if (_currentPage == 2) {
                         Navigator.pushAndRemoveUntil(

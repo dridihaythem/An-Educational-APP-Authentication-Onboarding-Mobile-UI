@@ -1,3 +1,4 @@
+import 'package:design/constant.dart';
 import 'package:design/on_boarding_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -23,7 +24,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF491B6D),
+      backgroundColor: Constant.mainColor,
       body: Center(
         child: Image.asset(
           "assets/images/splash_screen.png",

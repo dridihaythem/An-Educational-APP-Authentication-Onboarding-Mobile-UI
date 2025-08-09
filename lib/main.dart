@@ -1,3 +1,4 @@
+import 'package:design/constant.dart';
 import 'package:design/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -15,13 +16,22 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Constant.mainColor),
         textTheme: GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme),
         appBarTheme: AppBarTheme(
           titleTextStyle: GoogleFonts.poppins(
             textStyle: TextStyle(fontSize: 18),
             fontWeight: FontWeight.w500,
             color: Colors.black,
+          ),
+        ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Constant.mainColor,
+            minimumSize: Size(double.infinity, 50),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(7),
+            ),
           ),
         ),
       ),

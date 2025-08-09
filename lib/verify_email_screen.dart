@@ -1,3 +1,4 @@
+import 'package:design/constant.dart';
 import 'package:flutter/material.dart';
 
 class VerifyEmailScreen extends StatelessWidget {
@@ -102,7 +103,7 @@ class VerifyEmailScreen extends StatelessWidget {
                       TextSpan(text: 'Expires in  '),
                       TextSpan(
                         text: '01:00',
-                        style: TextStyle(color: Color(0xFF491B6D)),
+                        style: TextStyle(color: Constant.mainColor),
                       ),
                     ],
                     style: TextStyle(
@@ -115,7 +116,7 @@ class VerifyEmailScreen extends StatelessWidget {
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                backgroundColor: Color(0xFF491B6D),
+                backgroundColor: Constant.mainColor,
                 minimumSize: Size(double.infinity, 50),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(7),
