@@ -67,16 +67,26 @@ class LoginScreen extends StatelessWidget {
                               child: Column(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
-                                  Align(
-                                    alignment: Alignment.centerRight,
-                                    child: CircleAvatar(
-                                      radius: 17,
-                                      child: Icon(
-                                        Icons.close_rounded,
-                                        color: Color.fromARGB(255, 75, 74, 74),
-                                        size: 30,
+                                  GestureDetector(
+                                    onTap: () {
+                                      Navigator.pop(context);
+                                    },
+                                    child: Align(
+                                      alignment: Alignment.centerRight,
+                                      child: CircleAvatar(
+                                        radius: 17,
+                                        child: Icon(
+                                          Icons.close_rounded,
+                                          color: Color.fromARGB(
+                                            255,
+                                            75,
+                                            74,
+                                            74,
+                                          ),
+                                          size: 30,
+                                        ),
+                                        backgroundColor: Color(0xFFD9D9D9),
                                       ),
-                                      backgroundColor: Color(0xFFD9D9D9),
                                     ),
                                   ),
                                   Text(
