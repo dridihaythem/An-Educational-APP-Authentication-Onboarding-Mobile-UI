@@ -1,5 +1,6 @@
 import 'package:design/constant.dart';
 import 'package:design/login_screen.dart';
+import 'package:design/reset_password_screen.dart';
 import 'package:design/verify_email_screen.dart';
 import 'package:design/widgets/app_form_field.dart';
 import 'package:design/widgets/login_register_switcher.dart';
@@ -112,7 +113,13 @@ class LoginScreen extends StatelessWidget {
                                   SizedBox(height: 20),
                                   ElevatedButton(
                                     onPressed: () {
-                                      Navigator.pop(context);
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) =>
+                                              ResetPasswordScreen(),
+                                        ),
+                                      );
                                     },
                                     child: Row(
                                       spacing: 8,
