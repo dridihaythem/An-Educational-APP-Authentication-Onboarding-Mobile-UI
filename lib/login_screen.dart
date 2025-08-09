@@ -52,11 +52,79 @@ class LoginScreen extends StatelessWidget {
                       obscureText: true,
                     ),
                     SizedBox(height: 15),
-                    Text(
-                      'Forgot Password ?',
-                      style: TextStyle(
-                        color: Constant.mainColor,
-                        fontWeight: FontWeight.bold,
+                    GestureDetector(
+                      onTap: () {
+                        showModalBottomSheet(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return Container(
+                              padding: EdgeInsets.only(
+                                top: 30,
+                                bottom: 50,
+                                right: 20,
+                                left: 20,
+                              ),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Align(
+                                    alignment: Alignment.centerRight,
+                                    child: CircleAvatar(
+                                      radius: 17,
+                                      child: Icon(
+                                        Icons.close_rounded,
+                                        color: Color.fromARGB(255, 75, 74, 74),
+                                        size: 30,
+                                      ),
+                                      backgroundColor: Color(0xFFD9D9D9),
+                                    ),
+                                  ),
+                                  Text(
+                                    'Forgot your Password?',
+                                    style: TextStyle(
+                                      fontSize: 23,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  SizedBox(height: 16),
+                                  Text(
+                                    'Enter your email address and we will share a link to create a new password.',
+                                    style: TextStyle(
+                                      fontSize: 15,
+                                      color: Color(0xFF4B4B4B),
+                                    ),
+                                  ),
+                                  SizedBox(height: 25),
+                                  AppFormField(
+                                    label: 'Email Address',
+                                    prefixIcon: Icons.email_outlined,
+                                  ),
+                                  SizedBox(height: 20),
+                                  ElevatedButton(
+                                    onPressed: () {
+                                      Navigator.pop(context);
+                                    },
+                                    child: Row(
+                                      spacing: 8,
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        Icon(Icons.send),
+                                        Text('Send'),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            );
+                          },
+                        );
+                      },
+                      child: Text(
+                        'Forgot Password ?',
+                        style: TextStyle(
+                          color: Constant.mainColor,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                   ],
